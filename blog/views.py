@@ -1,6 +1,9 @@
 #from django.shortcuts import render
 from .models import Publication
 from django.views.generic import ListView, DetailView
+#Se importan las clases genericas para poder Crear, Actualizar o Borrar
+from django.views.generic.edit import CreateView #UpdateView, DeleteView
+
 
 class PublicationListView(ListView):
     model = Publication
@@ -10,5 +13,24 @@ class PublicationListView(ListView):
 class PublicationDetailView(DetailView):
     model = Publication
     template_name = 'publication-detail.html'   
+# se agrego la forma para hacer la vista del create (modelo con template)
+class PublicationCreateView(CreateView):
+    model = Publication
+    template_name = "publication-create.html"
+    fields = ['title', 'body', 'author']
+    
+#class PublicationlUpdateView(UpdateView):
+ #   model = Publication
+  #  template_name = ".html"
+
+#class class PublicationDeleteView(DeleteView):
+ #   model = Publication
+  #  template_name = ".html"
+    
+
+
+
+
+
 
 # Create your views here.
