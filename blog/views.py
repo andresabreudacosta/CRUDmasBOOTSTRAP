@@ -3,7 +3,7 @@ from .models import Publication
 from django.views.generic import ListView, DetailView
 from django.urls import reverse_lazy # importa reverse lazy
 #Se importan las clases genericas para poder Crear, Actualizar o Borrar
-from django.views.generic.edit import CreateView #UpdateView, DeleteView
+from django.views.generic.edit import CreateView ,UpdateView #, DeleteView
 
 
 class PublicationListView(ListView):
@@ -19,12 +19,13 @@ class PublicationCreateView(CreateView):
     model = Publication
     template_name = "publication-create.html"
     fields = ['title', 'body', 'author']
-    def get_success_url(self):
-        return reverse_lazy('publications-list')
+    #def get_success_url(self):
+    #    return reverse_lazy('publications-list')
     
-#class PublicationlUpdateView(UpdateView):
- #   model = Publication
-  #  template_name = ".html"
+class PublicationUpdateView(UpdateView):
+    model = Publication
+    template_name = "publication-update.html"
+    fields = ['title', 'body']
 
 #class class PublicationDeleteView(DeleteView):
  #   model = Publication
