@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Publication(models.Model):
@@ -11,3 +12,9 @@ class Publication(models.Model):
 
     def __str__(self):
         return self.title
+    #solucion del profesor
+    def get_absolute_url(self):
+        return reverse("publication-detail", kwargs={"pk": self.pk})
+    
+    
+    
