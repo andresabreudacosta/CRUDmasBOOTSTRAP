@@ -5,7 +5,11 @@
     <h2>{{ publication.title }}</h2>
     <p>{{ publication.author }}</p>
     <p>{{ publication.body }}</p>
-    <a href="{% url 'publication-update' publication.pk %}">Actualizar</a>
+
+    -- boton para actualizar/se usa el pseudonimo--
+    <a href="{% url 'publication-update' publication.pk %}">Actualizar publicacion</a>
+    --boton para borrar/se usa el pseudonimo--
+    <a href="{% url 'publication-delete' publication.pk %}">Borrar publicacion</a>
 
 {% endblock content %}
 

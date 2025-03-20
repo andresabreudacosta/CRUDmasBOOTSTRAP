@@ -1,9 +1,9 @@
 #from django.shortcuts import render
 from .models import Publication
 from django.views.generic import ListView, DetailView
-from django.urls import reverse_lazy # importa reverse lazy
-#Se importan las clases genericas para poder Crear, Actualizar o Borrar
-from django.views.generic.edit import CreateView ,UpdateView #, DeleteView
+from django.urls import reverse_lazy # importa reverse lazy para tener una direccion de retorno
+#Se importan las clases genericas para poder Crear, Actualizar y Borrar
+from django.views.generic.edit import CreateView ,UpdateView , DeleteView
 
 
 class PublicationListView(ListView):
@@ -27,10 +27,10 @@ class PublicationUpdateView(UpdateView):
     template_name = "publication-update.html"
     fields = ['title', 'body']
 
-#class class PublicationDeleteView(DeleteView):
- #   model = Publication
-  #  template_name = ".html"
-    
+class PublicationDeleteView(DeleteView):
+    model = Publication
+    template_name = "publication-delete.html"
+    success_url = reverse_lazy('publications-list')
 
 
 
