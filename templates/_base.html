@@ -13,10 +13,16 @@
 
    <div> 
 
+  </header> 
+  {% if user.is_authenticated %}
+      <p> Hola {{user.username}} <p>
+  {% else  %}
+
+        <a href="{% url 'login'%}">Iniciar sesion</a>
+        
+  {% endif %}
 
 
-
-  </HEAder> 
   {% block content %} 
       
   {% endblock content %} 
