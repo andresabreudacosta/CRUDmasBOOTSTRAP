@@ -37,9 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #creacion de aplicaciones locales
     #agrgegamos la app creada
     'blog',
     #agregamos la app de rest_framework
+    'accounts', # nueva aplicacion asociado a accounts
 ]
 
 MIDDLEWARE = [
