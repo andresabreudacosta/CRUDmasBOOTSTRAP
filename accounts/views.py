@@ -1,10 +1,13 @@
 # Django imports
 from django.shortcuts import render
+
 from django.contrib.auth.forms import UserCreationForm
+#
 from django.urls import reverse_lazy
+# Se importa la vista CreateView
 from django.views.generic.edit import CreateView
 
-#
+# Se define la vista SignUpView que hereda de CreateView
 class SignUpView(CreateView):
     # Se define la clase SignUpView que hereda de CreateView
     template_name = 'registration/signup.html'

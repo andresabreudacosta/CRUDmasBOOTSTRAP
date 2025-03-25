@@ -10,13 +10,15 @@
    <h1> <a href="{% url 'publications-list' %}">Blog de Josefino</a></h1>
    <div>
         <a href="{% url 'publication-create'%}">Nueva Publicacion</a>
-
    <div> 
 
   </header> 
+  <!-- Si el usuario esta autenticado, le saluda por su nombre -->
   {% if user.is_authenticated %}
+      
       <p> Hola {{user.username}} </p>
-      <!-- logout link -->
+      
+      <!-- se hace logaut si el usaurio asi lo quiere -->
         <form action="{% url 'logout' %}" method="post">
           {% csrf_token %}
           <button type="submit">Cerrar Sesion</button>

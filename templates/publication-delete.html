@@ -4,7 +4,7 @@
 
 {% block content %}
     
-        <h2> Estas seguro que deseas eliminar la publicacion "{{ publication.title }}"?</h2>
+        <h2>Estas seguro que deseas eliminar la publicacion "{{ publication.title }}"?</h2>
         <form method="post">
             {% csrf_token %}
             <button type="submit">ELiminar</button>
