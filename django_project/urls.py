@@ -20,6 +20,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')), #agregamos la url de la app blog	
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),#Esta ya veiene 
     path('accounts/', include('accounts.urls')), #nuevo busca la que no consigue antes
 ]
