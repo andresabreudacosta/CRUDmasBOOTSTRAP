@@ -5,11 +5,14 @@
     <h2>{{ publication.title }}</h2>
     <p>{{ publication.author }}</p>
     <p>{{ publication.body }}</p>
-
-    <!-- <-- boton para actualizar/se usa el pseudonimo-->
-    <a href="{% url 'publication-update' publication.pk %}">Actualizar publicacion</a>
-    <!-- <--boton para borrar/se usa el pseudonimo--> 
-    <a href="{% url 'publication-delete' publication.pk %}">Borrar publicacion</a>
+<!--Se condiciona los botones del update o del delete a que corresponda con el autor del objeto
+con el usuario autenticado-->
+    {% if publication.author.pk == request.user.pk %}
+        <!-- <-- boton para actualizar/se usa el pseudonimo-->
+        <a href="{% url 'publication-update' publication.pk %}">Actualizar publicacion</a>
+        <!-- <--boton para borrar/se usa el pseudonimo--> 
+        <a href="{% url 'publication-delete' publication.pk %}">Borrar publicacion</a>
+    {% endif %}
 
 {% endblock content %}
 
