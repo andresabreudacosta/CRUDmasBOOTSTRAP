@@ -1,13 +1,19 @@
 <!-- Voy a crear el template para el sigup mediante un post -->
 {% extends "_base.html" %}
 
+{% load crispy_forms_tags %}
+<!-- {% load crispy_forms_tags %} --> 
+ <!-- para usar crispy forms en el template -->
+
+{% block title %}Registrarse{% endblock title %}
 
 {% block content %}
     <h2>Registrarse<h2>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Registrarse</button>
+        <!-- {{ form.as_p }} se cambio por crispy  -->
+        {{ form | crispy }} <!-- para usar crispy forms en el template -->
+        <button type="submit" class="btn btn-success" >Registrarse</button>
     </form>
 
     <a href="{% url 'login' %}">Ya tienes cuenta? Inicia sesion</a>

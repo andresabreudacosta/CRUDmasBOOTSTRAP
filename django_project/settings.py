@@ -40,9 +40,12 @@ INSTALLED_APPS = [
     #creacion de aplicaciones locales
     #agregamos la app creada
     'blog',
-    #agregamos la app de rest_framework
     'accounts', # nueva aplicacion asociado a accounts
+    # Aplicaciones de terceros
+    'crispy_forms', # para el uso de crispy forms
+    'crispy_bootstrap5', # para el uso de crispy forms
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -131,3 +134,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL =  'publications-list'
 #logout redirect
 LOGOUT_REDIRECT_URL = 'publications-list'
+#crispy forms settings
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
