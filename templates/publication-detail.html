@@ -9,9 +9,9 @@
 con el usuario autenticado-->
     {% if publication.author.pk == request.user.pk %}
         <!-- <-- boton para actualizar/se usa el pseudonimo-->
-        <a href="{% url 'publication-update' publication.pk %}">Actualizar publicacion</a>
+        <a href="{% url 'publication-update' publication.pk %}" class="btn btn-info" >Actualizar publicacion</a>
         <!-- <--boton para borrar/se usa el pseudonimo--> 
-        <a href="{% url 'publication-delete' publication.pk %}">Borrar publicacion</a>
+        <a href="{% url 'publication-delete' publication.pk %}" class="btn btn-info" >Borrar publicacion</a>
     {% endif %}
 
 {% endblock content %}
